@@ -3,3 +3,23 @@
 @{
 }
 <h1>Soy la pagina test</h1>
+<div class="card col-6">
+	<div class="card-header">
+		<form>Calculadora</form>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			<div class="form-group"> 
+				<label>Numero 1</label>
+				<input asp-for="Numero1" type="number" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label>Numero 2</label>
+				<input asp-for="Numero2" type="number" class="form-control" />
+			</div>
+			
+			<button type="submit" class="btn btn-primary mt-5">Calcular</button>
+			<!--<input asp-for ="Resultado" class="form-control mt-5"/> -->
+		</form>
+	</div>
+</div>
