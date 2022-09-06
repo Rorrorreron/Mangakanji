@@ -1,10 +1,14 @@
+using Mangakanji.DATOS;
+using Mangakanji.DATOS.REPOSITORIOS;
 using Mangakanji.NEGOCIO;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<ICalculo, Calculo>();
+builder.Services.AddScoped<ICalculo, Calculo2>();
+builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+builder.Services.AddScoped<ICategoriaNegocio, CategoriaNegocio>();
 
 var app = builder.Build();
 

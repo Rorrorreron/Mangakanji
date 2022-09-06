@@ -3,8 +3,9 @@
 @{
 }
 <div class="card">
-	<div class="card-header bg-primary text-white">
+	<div class="card-header bg-primary text-white d-flex justify-content-between">
 		<h3>Listado de categorias</h3>
+		<a asp-page="/nueva-categoria" class="btn btn-success"><i class="bi bi-plus-circle-dotted"></i> Nueva categoria</a>
 	</div>
 	<div class="card-body">
 		<table class="table table-striped">
@@ -16,30 +17,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Categoria 1</td>
-					<td>
-						<button class="btn btn-warning">Editar</button>
-						<button class="btn btn-danger">Eliminar</button>
-					</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Categoria 2</td>
-					<td>
-						<button class="btn btn-warning">Editar</button>
-						<button class="btn btn-danger">Eliminar</button>
-					</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Categoria 3</td>
-					<td>
-						<button class="btn btn-warning">Editar</button>
-						<button class="btn btn-danger">Eliminar</button>
-					</td>
-				</tr>
+				@foreach(var categoria in Model.Categorias)
+				{
+					<tr>
+						<td>@categoria.Id</td>
+						<td>@categoria.Nombre</td>
+						<td>
+							<button class="btn btn-warning"><i class="bi bi-pencil-square"></i> Editar</button>
+							<button class="btn btn-danger"><i class="bi bi-trash-fill"></i> Eliminar</button>
+						</td>
+					</tr>
+				}
+				
 			</tbody>
 		</table>
 	</div>
